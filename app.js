@@ -134,6 +134,7 @@ export function createAttempt(data, random = Math.random) {
         verseText: question.verseText,
         explanation: question.explanation,
         selected: null,
+        checked: false,
       })),
       random,
     ),
@@ -142,16 +143,26 @@ export function createAttempt(data, random = Math.random) {
 
 export function selectAnswer(attempt, choice) {
   const question = attempt.questions[attempt.index];
-  if (!question || question.selected !== null || !question.answers.includes(choice)) {
-    return { changed: false, correct: false };
+  if (!question || question.checked || !question.answers.includes(choice)) {
+    return { changed: false };
   }
+  if (question.selected === choice) return { changed: false };
   question.selected = choice;
-  return { changed: true, correct: choice === question.correct };
+  return { changed: true };
+}
+
+export function submitAnswer(attempt) {
+  const question = attempt.questions[attempt.index];
+  if (!question || question.checked || question.selected === null) {
+    return { ok: false, correct: false };
+  }
+  question.checked = true;
+  return { ok: true, correct: question.selected === question.correct };
 }
 
 export function goNext(attempt) {
   const question = attempt.questions[attempt.index];
-  if (!question || question.selected === null || attempt.index >= attempt.questions.length - 1) {
+  if (!question || !question.checked || attempt.index >= attempt.questions.length - 1) {
     return { ok: false };
   }
   attempt.index += 1;
@@ -165,17 +176,18 @@ export function goPrevious(attempt) {
 }
 
 export function answerPresentation(question) {
-  const locked = question.selected !== null;
+  const checked = question.checked === true;
   return question.answers.map((text) => {
     let tone = "idle";
-    if (locked && text === question.correct) tone = "correct";
-    else if (locked && text === question.selected) tone = "wrong";
-    return { text, tone, disabled: locked };
+    if (checked && text === question.correct) tone = "correct";
+    else if (checked && text === question.selected) tone = "wrong";
+    else if (!checked && text === question.selected) tone = "selected";
+    return { text, tone, disabled: checked };
   });
 }
 
 export function feedbackFor(question) {
-  if (!question || question.selected === null) return null;
+  if (!question || question.checked !== true) return null;
   return {
     correct: question.selected === question.correct,
     selected: question.selected,
@@ -198,7 +210,7 @@ export function scoreAttempt(attempt) {
 
 export function readyForResults(attempt) {
   const question = attempt.questions[attempt.index];
-  return attempt.questions.length > 0 && attempt.index === attempt.questions.length - 1 && question?.selected !== null;
+  return attempt.questions.length > 0 && attempt.index === attempt.questions.length - 1 && question?.checked === true;
 }
 
 export function partitionFolder(folder) {
@@ -320,18 +332,6 @@ function goTo(segments) {
     return;
   }
   location.hash = segments.length ? `#/${segments.map((segment) => encodeURIComponent(segment)).join("/")}` : "#/";
-}
-
-function goToQuiz() {
-  if (!state.catalog) {
-    // Catalog not ready yet; renderFromHash picks the hash up once it loads.
-    location.hash = "#/Quiz";
-    return;
-  }
-  const quiz = state.catalog.items.find(
-    (item) => item.type === "folder" && item.name.toLowerCase() === "quiz",
-  );
-  goTo(quiz ? [quiz.name] : []);
 }
 
 function renderFromHash({ scroll = true } = {}) {
@@ -590,7 +590,10 @@ function renderQuiz() {
   progress.setAttribute("aria-label", `Question ${current} of ${total}`);
   document.getElementById("quiz-progress-bar").style.width = `${(current / total) * 100}%`;
   applyText(document.getElementById("quiz-question"), question.question);
-  document.getElementById("answer-label").textContent = question.selected === null ? "Choose one answer" : "Answer locked";
+  let answerLabel = "Choose one answer";
+  if (question.checked) answerLabel = "Answer locked";
+  else if (question.selected !== null) answerLabel = "Ready to submit";
+  document.getElementById("answer-label").textContent = answerLabel;
 
   const answers = document.getElementById("answers");
   answers.replaceChildren();
@@ -600,14 +603,15 @@ function renderQuiz() {
     button.className = "answer";
     if (choice.tone === "correct") button.classList.add("is-correct");
     if (choice.tone === "wrong") button.classList.add("is-wrong");
+    if (choice.tone === "selected") button.classList.add("is-selected");
     applyText(button, choice.text);
     button.disabled = choice.disabled;
+    button.setAttribute("aria-pressed", String(choice.tone === "selected" || choice.tone === "wrong"));
     button.addEventListener("click", () => {
       if (!selectAnswer(attempt, choice.text).changed) return;
       renderQuiz();
-      const feedback = document.getElementById("quiz-feedback");
-      feedback.tabIndex = -1;
-      feedback.focus();
+      const submit = document.getElementById("quiz-next");
+      if (!submit.disabled) submit.focus();
     });
     answers.append(button);
   }
@@ -616,8 +620,14 @@ function renderQuiz() {
   const previous = document.getElementById("quiz-prev");
   const next = document.getElementById("quiz-next");
   previous.hidden = attempt.index === 0;
-  next.hidden = question.selected === null;
-  next.textContent = readyForResults(attempt) ? "See results" : "Next";
+  next.hidden = false;
+  if (question.checked) {
+    next.textContent = readyForResults(attempt) ? "See results" : "Next";
+    next.disabled = false;
+  } else {
+    next.textContent = "Submit";
+    next.disabled = question.selected === null;
+  }
 }
 
 function renderFeedback(question) {
@@ -686,7 +696,7 @@ function boot() {
   document.getElementById("all-folders").addEventListener("click", () => goTo([]));
   document.querySelector(".cta").addEventListener("click", (event) => {
     event.preventDefault();
-    goToQuiz();
+    goTo([]);
   });
 
   const dialog = document.getElementById("quiz-dialog");

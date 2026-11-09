@@ -270,7 +270,7 @@ async function assertSources() {
   assert.match(html, /Noto\+Sans\+Tamil/);
   assert.match(html, /DM\+Sans/);
   assert.match(html, /Playfair\+Display/);
-  assert.match(html, /Explore quizzes/);
+  assert.match(html, /Explore what we have!/);
   assert.match(html, />All folders</);
   assert.match(html, /<dialog id="quiz-dialog"/);
   assert.match(html, /<script type="module" src="app\.js"><\/script>/);
@@ -444,7 +444,7 @@ async function assertServer() {
 
     const rootPage = await request("/");
     assert.equal(rootPage.status, 200);
-    assert.match(rootPage.body.toString("utf8"), /Explore quizzes/);
+    assert.match(rootPage.body.toString("utf8"), /Explore what we have!/);
 
     const style = await request("/styles.css");
     const script = await request("/app.js");
