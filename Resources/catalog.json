@@ -27,45 +27,6 @@
           "items": []
         }
       ]
-    },
-    {
-      "type": "folder",
-      "title": "Quiz",
-      "name": "Quiz",
-      "path": "Resources/Quiz",
-      "extension": "",
-      "isImageFolder": false,
-      "items": [
-        {
-          "type": "folder",
-          "title": "Books",
-          "name": "Books",
-          "path": "Resources/Quiz/Books",
-          "extension": "",
-          "isImageFolder": false,
-          "items": [
-            {
-              "type": "folder",
-              "title": "Acts",
-              "name": "Acts",
-              "path": "Resources/Quiz/Books/Acts",
-              "extension": "",
-              "isImageFolder": false,
-              "items": [
-                {
-                  "type": "folder",
-                  "title": "Tamil",
-                  "name": "Tamil",
-                  "path": "Resources/Quiz/Books/Acts/Tamil",
-                  "extension": "",
-                  "isImageFolder": false,
-                  "items": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ]
 }
