@@ -54,6 +54,7 @@
       </div>
       <div id="browser-status" class="status" role="status"></div>
       <div id="browser-rows" class="resource-list"></div>
+      <div id="preview-grid" class="preview-grid" hidden></div>
       <div id="image-grid" class="image-grid" hidden></div>
     </section>
   </main>
@@ -88,7 +89,7 @@
         </div>
         <div class="quiz-nav">
           <button type="button" id="quiz-prev" class="nav-btn secondary" hidden>Previous</button>
-          <button type="button" id="quiz-next" class="nav-btn primary" hidden>Next</button>
+          <button type="button" id="quiz-next" class="nav-btn primary" hidden>Submit</button>
         </div>
       </div>
       <div id="quiz-results" hidden>
@@ -100,6 +101,15 @@
         </div>
         <button type="button" id="try-again" class="try-again">Try again</button>
       </div>
+    </div>
+  </dialog>
+  <dialog id="image-dialog" class="image-dialog" aria-label="Image viewer">
+    <div class="image-topbar">
+      <span class="image-hint">Pinch or double-tap to zoom</span>
+      <button type="button" id="image-close" class="quiz-close image-close">Close</button>
+    </div>
+    <div id="image-viewport" class="image-viewport">
+      <img id="image-full" alt="" draggable="false">
     </div>
   </dialog>
   <script type="module" src="app.js"></script>

@@ -226,6 +226,12 @@ export function partitionFolder(folder) {
   return { folders, files, images };
 }
 
+export function isPreviewableFile(file) {
+  if (!file || file.type !== "file") return false;
+  const extension = String(file.extension || "").toLowerCase();
+  return extension === ".pdf" || IMAGE_EXTENSIONS.has(extension);
+}
+
 export function resourceHref(resourcePath) {
   return String(resourcePath)
     .split("/")
@@ -392,6 +398,10 @@ function renderLanding() {
   rootFiles.hidden = files.length === 0;
 }
 
+function isCreedsSection() {
+  return String(state.trail[0]?.name ?? "").toLowerCase() === "creeds";
+}
+
 function renderBrowser(folder) {
   document.getElementById("categories").hidden = true;
   document.getElementById("browser").hidden = false;
@@ -399,14 +409,18 @@ function renderBrowser(folder) {
   document.getElementById("folder-summary").textContent = itemCount(folder.items.length);
   renderBreadcrumbs();
   const parts = partitionFolder(folder);
+  const creeds = isCreedsSection();
+  const previews = creeds ? [...parts.files, ...parts.images].filter(isPreviewableFile) : [];
+  const remaining = parts.files.filter((file) => !previews.includes(file));
   const rows = document.getElementById("browser-rows");
   const rowNodes = [
     ...parts.folders.map((child, index) => folderButton(child, index)),
-    ...parts.files.map((file, index) => fileLink(file, parts.folders.length + index)),
+    ...remaining.map((file, index) => fileLink(file, parts.folders.length + index)),
   ];
   rows.replaceChildren(...rowNodes);
   rows.hidden = rowNodes.length === 0;
-  renderImages(parts.images);
+  renderPreviews(previews);
+  renderImages(creeds ? [] : parts.images);
   const status = document.getElementById("browser-status");
   const total = parts.folders.length + parts.files.length + parts.images.length;
   status.textContent = total === 0 ? "This folder is empty." : "";
@@ -481,10 +495,52 @@ function renderImages(images) {
     const caption = document.createElement("figcaption");
     applyText(caption, image.title);
     link.append(img, caption);
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      openImageViewer(image, link);
+    });
     figure.append(link);
     grid.append(figure);
   });
   grid.hidden = images.length === 0;
+}
+
+function renderPreviews(files) {
+  const grid = document.getElementById("preview-grid");
+  grid.replaceChildren();
+  files.forEach((file, index) => {
+    const figure = document.createElement("figure");
+    figure.className = `preview-card tone-${index % 4}`;
+    const link = document.createElement("a");
+    link.href = resourceHref(file.path);
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    const caption = document.createElement("figcaption");
+    applyText(caption, file.title);
+    if (file.extension === ".pdf") {
+      const frame = document.createElement("object");
+      frame.className = "preview-media preview-pdf";
+      frame.type = "application/pdf";
+      frame.data = `${link.href}#page=1&view=FitH&toolbar=0&navpanes=0`;
+      frame.setAttribute("aria-label", `Preview of ${caption.textContent}`);
+      frame.append(document.createTextNode("Preview unavailable. Open the file to view it."));
+      link.append(frame, caption);
+    } else {
+      const img = document.createElement("img");
+      img.className = "preview-media";
+      img.src = link.href;
+      img.loading = "lazy";
+      img.alt = "";
+      link.append(img, caption);
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        openImageViewer(file, link);
+      });
+    }
+    figure.append(link);
+    grid.append(figure);
+  });
+  grid.hidden = files.length === 0;
 }
 
 async function loadCatalog() {
@@ -544,6 +600,161 @@ function focusQuestion() {
   question.tabIndex = -1;
   question.focus();
 }
+
+const IMAGE_MAX_SCALE = 6;
+const imageView = {
+  scale: 1,
+  x: 0,
+  y: 0,
+  pointers: new Map(),
+  pinch: null,
+  pinched: false,
+  lastTap: 0,
+  lastTapX: 0,
+  lastTapY: 0,
+};
+let imageOpener = null;
+
+function applyImageView() {
+  const img = document.getElementById("image-full");
+  img.style.transform = `translate(${imageView.x}px, ${imageView.y}px) scale(${imageView.scale})`;
+}
+
+function setImageViewScale(scale) {
+  imageView.scale = Math.min(IMAGE_MAX_SCALE, Math.max(1, scale));
+  if (imageView.scale === 1) {
+    imageView.x = 0;
+    imageView.y = 0;
+  }
+  applyImageView();
+}
+
+function resetImageView() {
+  imageView.scale = 1;
+  imageView.x = 0;
+  imageView.y = 0;
+  imageView.pointers.clear();
+  imageView.pinch = null;
+  imageView.pinched = false;
+  imageView.lastTap = 0;
+  applyImageView();
+}
+
+function toggleImageViewZoom() {
+  setImageViewScale(imageView.scale > 1 ? 1 : 2.5);
+}
+
+function openImageViewer(file, trigger) {
+  imageOpener = trigger ?? null;
+  const dialog = document.getElementById("image-dialog");
+  const img = document.getElementById("image-full");
+  img.src = resourceHref(file.path);
+  img.alt = file.title || "Image";
+  resetImageView();
+  if (!dialog.open) dialog.showModal();
+  document.getElementById("image-close").focus();
+}
+
+function bindImageViewer() {
+  const dialog = document.getElementById("image-dialog");
+  const viewport = document.getElementById("image-viewport");
+
+  document.getElementById("image-close").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    document.getElementById("image-full").removeAttribute("src");
+    resetImageView();
+    imageOpener?.focus();
+  });
+
+  viewport.addEventListener("pointerdown", (event) => {
+    try {
+      viewport.setPointerCapture(event.pointerId);
+    } catch {
+      // Synthetic or already-released pointers cannot be captured.
+    }
+    imageView.pointers.set(event.pointerId, {
+      x: event.clientX,
+      y: event.clientY,
+      startX: event.clientX,
+      startY: event.clientY,
+      moved: false,
+    });
+    if (imageView.pointers.size === 2) {
+      const [first, second] = [...imageView.pointers.values()];
+      imageView.pinched = true;
+      imageView.pinch = {
+        distance: Math.hypot(first.x - second.x, first.y - second.y),
+        scale: imageView.scale,
+      };
+    } else {
+      imageView.pinch = null;
+    }
+  });
+
+  viewport.addEventListener("pointermove", (event) => {
+    const point = imageView.pointers.get(event.pointerId);
+    if (!point) return;
+    const dx = event.clientX - point.x;
+    const dy = event.clientY - point.y;
+    point.x = event.clientX;
+    point.y = event.clientY;
+    if (Math.hypot(event.clientX - point.startX, event.clientY - point.startY) > 6) {
+      point.moved = true;
+    }
+    if (imageView.pointers.size === 2 && imageView.pinch) {
+      const [first, second] = [...imageView.pointers.values()];
+      const distance = Math.hypot(first.x - second.x, first.y - second.y);
+      const ratio = imageView.pinch.distance > 0 ? distance / imageView.pinch.distance : 1;
+      setImageViewScale(imageView.pinch.scale * ratio);
+      return;
+    }
+    if (imageView.scale > 1 && (dx !== 0 || dy !== 0)) {
+      imageView.x += dx;
+      imageView.y += dy;
+      applyImageView();
+    }
+  });
+
+  function endPointer(event) {
+    const point = imageView.pointers.get(event.pointerId);
+    imageView.pointers.delete(event.pointerId);
+    if (imageView.pointers.size < 2) imageView.pinch = null;
+    if (imageView.pinched) {
+      if (imageView.pointers.size === 0) imageView.pinched = false;
+      return;
+    }
+    if (!point || point.moved) return;
+    const now = Date.now();
+    const near = Math.hypot(event.clientX - imageView.lastTapX, event.clientY - imageView.lastTapY) < 36;
+    if (now - imageView.lastTap < 320 && near) {
+      imageView.lastTap = 0;
+      toggleImageViewZoom();
+    } else {
+      imageView.lastTap = now;
+      imageView.lastTapX = event.clientX;
+      imageView.lastTapY = event.clientY;
+    }
+  }
+
+  viewport.addEventListener("pointerup", endPointer);
+  viewport.addEventListener("pointercancel", (event) => {
+    imageView.pointers.delete(event.pointerId);
+    if (imageView.pointers.size < 2) imageView.pinch = null;
+    if (imageView.pointers.size === 0) imageView.pinched = false;
+  });
+  viewport.addEventListener(
+    "wheel",
+    (event) => {
+      event.preventDefault();
+      setImageViewScale(imageView.scale * Math.exp(-event.deltaY * 0.0015));
+    },
+    { passive: false },
+  );
+}
+
 
 function openQuiz(data, trigger) {
   opener = trigger ?? null;
@@ -707,6 +918,7 @@ function boot() {
   dialog.addEventListener("close", () => {
     opener?.focus();
   });
+  bindImageViewer();
   document.getElementById("quiz-prev").addEventListener("click", () => {
     if (!session || session.view !== "play" || !goPrevious(session.attempt).ok) return;
     renderQuiz();
@@ -714,12 +926,23 @@ function boot() {
   });
   document.getElementById("quiz-next").addEventListener("click", () => {
     if (!session || session.view !== "play") return;
-    if (readyForResults(session.attempt)) {
+    const attempt = session.attempt;
+    const question = attempt.questions[attempt.index];
+    if (!question) return;
+    if (!question.checked) {
+      if (!submitAnswer(attempt).ok) return;
+      renderQuiz();
+      const feedback = document.getElementById("quiz-feedback");
+      feedback.tabIndex = -1;
+      feedback.focus();
+      return;
+    }
+    if (readyForResults(attempt)) {
       session.view = "results";
       renderQuiz();
       return;
     }
-    if (!goNext(session.attempt).ok) return;
+    if (!goNext(attempt).ok) return;
     renderQuiz();
     focusQuestion();
   });

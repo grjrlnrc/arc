@@ -12,6 +12,7 @@ import {
   goNext,
   goPrevious,
   isChapterQuiz,
+  isPreviewableFile,
   isScriptureQuiz,
   partitionFolder,
   readyForResults,
@@ -19,6 +20,7 @@ import {
   scoreAttempt,
   selectAnswer,
   shuffle,
+  submitAnswer,
 } from "../app.js";
 import { catalogFile, generateCatalog, projectRoot, resourcesDir } from "./generate-catalog.mjs";
 import { HOST, PORT, listen } from "./local-server.mjs";
@@ -33,9 +35,6 @@ const quizPaths = new Set([
   "Resources/Scripture/Acts/acts-opening.json",
   "Resources/வேத பாடங்கள்/யோவான் 3.json",
 ]);
-for (let chapter = 1; chapter <= 28; chapter += 1) {
-  quizPaths.add(`Resources/Quiz/Books/Acts/Chapter ${chapter}.json`);
-}
 
 const resourceJsonPaths = new Set([
   "Resources/Scripture/Acts/almost.json",
@@ -166,11 +165,26 @@ function assertAttemptBehavior() {
   const first = attempt.questions[0];
   const savedAnswers = [...first.answers];
   const selected = first.answers[0];
-  const graded = selectAnswer(attempt, selected);
-  assert.equal(graded.changed, true);
-  assert.equal(graded.correct, selected === first.correct);
-  assert.equal(selectAnswer(attempt, first.answers[1]).changed, false);
+  const picked = selectAnswer(attempt, selected);
+  assert.equal(picked.changed, true);
   assert.equal(first.selected, selected);
+  assert.equal(first.checked, false);
+  assert.equal(selectAnswer(attempt, first.answers[1]).changed, true);
+  assert.equal(first.selected, first.answers[1]);
+  assert.equal(selectAnswer(attempt, selected).changed, true);
+  assert.equal(first.selected, selected);
+  assert.equal(goNext(attempt).ok, false);
+  assert.equal(feedbackFor(first), null);
+  const beforeSubmit = answerPresentation(first);
+  assert.equal(beforeSubmit.every((choice) => choice.disabled === false), true);
+  assert.equal(beforeSubmit.find((choice) => choice.text === selected).tone, "selected");
+  assert.equal(beforeSubmit.filter((choice) => choice.tone === "correct" || choice.tone === "wrong").length, 0);
+  const submitted = submitAnswer(attempt);
+  assert.equal(submitted.ok, true);
+  assert.equal(submitted.correct, selected === first.correct);
+  assert.equal(submitAnswer(attempt).ok, false);
+  assert.equal(first.checked, true);
+  assert.equal(selectAnswer(attempt, first.answers[0]).changed, false);
   const presented = answerPresentation(first);
   assert.equal(presented.every((choice) => choice.disabled), true);
   assert.equal(presented.find((choice) => choice.text === first.correct).tone, "correct");
@@ -193,20 +207,27 @@ function assertAttemptBehavior() {
   assert.equal(goNext(attempt).ok, true);
   assert.equal(readyForResults(attempt), false);
   selectAnswer(attempt, attempt.questions[1].correct);
+  assert.equal(readyForResults(attempt), false);
+  assert.equal(submitAnswer(attempt).ok, true);
   assert.equal(readyForResults(attempt), true);
   assert.equal(goNext(attempt).ok, false);
   const score = scoreAttempt(attempt);
   assert.equal(score.total, 2);
   assert.equal(score.percentage, Math.round((score.correct / score.total) * 100));
 
-  const correctOnly = { answers: ["A", "B", "C", "D"], correct: "B", selected: "B" };
+  const correctOnly = { answers: ["A", "B", "C", "D"], correct: "B", selected: "B", checked: true };
   assert.equal(answerPresentation(correctOnly).filter((choice) => choice.tone === "wrong").length, 0);
-  const wrongOnly = { answers: ["A", "B", "C", "D"], correct: "B", selected: "C" };
+  const wrongOnly = { answers: ["A", "B", "C", "D"], correct: "B", selected: "C", checked: true };
   assert.deepEqual(
     answerPresentation(wrongOnly).map((choice) => choice.tone),
     ["idle", "correct", "wrong", "idle"],
   );
-  const open = { answers: ["A", "B", "C", "D"], correct: "B", selected: null };
+  const selectedOnly = { answers: ["A", "B", "C", "D"], correct: "B", selected: "C", checked: false };
+  assert.deepEqual(
+    answerPresentation(selectedOnly).map((choice) => choice.tone),
+    ["idle", "idle", "selected", "idle"],
+  );
+  const open = { answers: ["A", "B", "C", "D"], correct: "B", selected: null, checked: false };
   assert.equal(answerPresentation(open).every((choice) => choice.tone === "idle" && choice.disabled === false), true);
   assert.equal(feedbackFor(open), null);
   assert.deepEqual(scoreAttempt({ questions: [{ selected: "A", correct: "A" }, { selected: "A", correct: "B" }, { selected: "A", correct: "C" }] }), {
@@ -250,6 +271,10 @@ function assertPartition() {
   const plain = partitionFolder({ isImageFolder: false, items });
   assert.equal(plain.images.length, 0);
   assert.equal(plain.files.length, 3);
+  assert.equal(isPreviewableFile({ type: "file", extension: ".pdf" }), true);
+  assert.equal(isPreviewableFile({ type: "file", extension: ".PNG" }), true);
+  assert.equal(isPreviewableFile({ type: "file", extension: ".txt" }), false);
+  assert.equal(isPreviewableFile({ type: "folder", extension: "" }), false);
 }
 
 async function assertSources() {
@@ -291,8 +316,18 @@ async function assertSources() {
   assert.match(app, /QUESTION \$\{current\} OF \$\{total\}/);
   assert.match(app, /See results/);
   assert.match(app, /"Next"/);
+  assert.match(app, /"Submit"/);
   assert.match(html, /Try again/);
   assert.match(html, />Previous</);
+  assert.match(html, />Submit</);
+  assert.match(html, /id="preview-grid"/);
+  assert.match(html, /id="image-dialog"/);
+  assert.match(html, /id="image-viewport"/);
+  assert.match(css, /\.preview-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/s);
+  assert.match(css, /\.image-viewport\s*\{[^}]*touch-action:\s*none/s);
+  assert.match(app, /isPreviewableFile/);
+  assert.match(app, /openImageViewer/);
+  assert.match(app, /"pointerdown"/);
   assert.equal(resourceHref("Resources/வேத பாடங்கள்/யோவான் 3.json").split("/").map(decodeURIComponent).join("/"), "Resources/வேத பாடங்கள்/யோவான் 3.json");
 }
 
@@ -323,17 +358,30 @@ async function assertUtf8Tree() {
   await walk(root);
 }
 
-function assertCatalogShape(catalog) {
+async function walkTreeFiles(dir, out = []) {
+  let entries;
+  try {
+    entries = await fs.readdir(dir, { withFileTypes: true });
+  } catch (error) {
+    if (error.code === "ENOENT") return out;
+    throw error;
+  }
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) await walkTreeFiles(full, out);
+    else if (entry.isFile()) out.push(full);
+  }
+  return out;
+}
+
+async function assertCatalogShape(catalog) {
   assert.ok(Array.isArray(catalog.items));
   assert.deepEqual(
     catalog.items.map((item) => item.name),
     ["Confessions", "Creeds", "Quiz", "Scripture", "வேத பாடங்கள்"],
   );
   const quizFolder = catalog.items.find((item) => item.name === "Quiz");
-  const books = quizFolder?.items.find((item) => item.name === "Books");
-  const acts = books?.items.find((item) => item.name === "Acts");
-  assert.ok(acts, "Quiz/Books/Acts folder missing from catalog");
-  assert.equal(acts.items.filter((item) => item.extension === ".json").length, 28);
+  assert.ok(quizFolder, "Quiz folder missing from catalog");
   walkItems(catalog.items, (item) => {
     for (const key of ["type", "title", "name", "path", "extension", "isImageFolder", "items"]) {
       assert.ok(Object.hasOwn(item, key), `${item.path || item.name} missing ${key}`);
@@ -360,7 +408,14 @@ function assertCatalogShape(catalog) {
   walkItems(catalog.items, (item) => {
     if (item.type === "file" && item.extension === ".json") jsonPaths.push(item.path);
   });
-  assert.deepEqual(jsonPaths.sort(), [...quizPaths, ...resourceJsonPaths].sort());
+  for (const known of [...quizPaths, ...resourceJsonPaths]) {
+    assert.ok(jsonPaths.includes(known), `catalog missing ${known}`);
+  }
+  const onDisk = (await walkTreeFiles(resourcesDir))
+    .filter((file) => path.extname(file).toLowerCase() === ".json")
+    .map((file) => path.relative(projectRoot, file).split(path.sep).join("/"))
+    .filter((item) => item !== "Resources/catalog.json");
+  assert.deepEqual(jsonPaths.sort(), onDisk.sort());
   const images = catalog.items
     .find((item) => item.name === "Scripture")
     .items.find((item) => item.name === "Acts")
@@ -401,13 +456,16 @@ async function assertSampleFiles() {
   assert.match(tamil.questions[0].question, /[\u0B80-\u0BFF]/);
   assert.equal(classifyJsonText(await fs.readFile(actsPath, "utf8")), "quiz");
   assert.equal(classifyJsonText(await fs.readFile(tamilPath, "utf8")), "quiz");
-  const chapterOne = JSON.parse(
-    await fs.readFile(path.join(resourcesDir, "Quiz", "Books", "Acts", "Chapter 1.json"), "utf8"),
+  const quizFiles = (await walkTreeFiles(path.join(resourcesDir, "Quiz"))).filter(
+    (file) => path.extname(file).toLowerCase() === ".json",
   );
-  assert.equal(isChapterQuiz(chapterOne), true);
-  assert.equal(classifyJsonText(JSON.stringify(chapterOne)), "quiz");
-  const chapterAttempt = createAttempt(chapterOne, () => 0);
-  assert.equal(chapterAttempt.questions.length, chapterOne.questions.length);
+  for (const file of quizFiles) {
+    const data = JSON.parse(await fs.readFile(file, "utf8"));
+    assert.equal(isChapterQuiz(data), true, file);
+    assert.equal(classifyJsonText(JSON.stringify(data)), "quiz", file);
+    const chapterAttempt = createAttempt(data, () => 0);
+    assert.equal(chapterAttempt.questions.length, data.questions.length);
+  }
   for (const name of ["almost.json", "broken.json", "legacy-format.json", "study-notes.json"]) {
     const text = await fs.readFile(path.join(resourcesDir, "Scripture", "Acts", name), "utf8");
     assert.equal(classifyJsonText(text), "resource", name);
@@ -509,7 +567,7 @@ async function main() {
   assertPartition();
   await assertSampleFiles();
   const catalog = await generateCatalog();
-  assertCatalogShape(catalog);
+  await assertCatalogShape(catalog);
   await assertImageFolderCase();
   const restored = await generateCatalog();
   assert.equal(restored.items.some((item) => item.name === "__CaseCheck__"), false);
@@ -517,7 +575,7 @@ async function main() {
   await cleanup();
   await assertUtf8Tree();
   const finalCatalog = JSON.parse(await fs.readFile(catalogFile, "utf8"));
-  assertCatalogShape(finalCatalog);
+  await assertCatalogShape(finalCatalog);
   console.log("check passed");
 }
 
