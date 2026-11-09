@@ -1,0 +1,405 @@
+{
+  "lessonTitle": "Acts Chapter 25 — Paul’s Trial Before Festus / Appeal to Caesar",
+  "questions": [
+    {
+      "questionText": "Three days after arriving in the province, Festus went up from Caesarea to Jerusalem, where the chief priests and Jewish leaders presented charges and asked a favor. What favor?",
+      "options": [
+        "To have Paul transferred to Jerusalem (they were preparing an ambush)",
+        "To free Paul",
+        "To crown Paul",
+        "To send Paul to Rome as a friend"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus answered that Paul was being held at Caesarea and he himself was going there soon. Let some of your leaders come with me. After spending how many days in Jerusalem he went down to Caesarea?",
+      "options": [
+        "Eight or ten days",
+        "Forty days",
+        "One year",
+        "Three months"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The next day Festus convened the court and ordered that Paul be brought before him. The Jews who had come down from Jerusalem stood around him bringing many serious charges they could not what?",
+      "options": [
+        "Prove",
+        "Sing",
+        "Pay",
+        "Forget"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul said, I have done nothing wrong against the Jewish law or against the temple or against Caesar. Festus, wishing to do the Jews a favor, asked Paul if he was willing to go where?",
+      "options": [
+        "Up to Jerusalem and stand trial before me there",
+        "To Rome as a tourist",
+        "To hide",
+        "To Tarsus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul said, I am now standing before Caesar’s court, where I ought to be tried. If I am guilty I do not refuse to die. But if the charges are not true, no one has the right to hand me over to them. Then he said what?",
+      "options": [
+        "I appeal to Caesar!",
+        "I appeal to Ananias",
+        "I appeal to Zeus",
+        "I will go to Jerusalem gladly"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "After Festus conferred with his council, he declared, You have appealed to Caesar. To Caesar you will go! A few days later which king arrived in Caesarea?",
+      "options": [
+        "King Agrippa and Bernice",
+        "Herod Antipas named here",
+        "Claudius",
+        "Gallio"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus discussed Paul’s case with the king. He said Felix left Paul a prisoner. When I sat on the judgment seat, I told them it is not the Roman custom to hand over anyone before the accused has faced the accusers and has had an opportunity to defend himself. Festus said he found Paul had done nothing deserving of what?",
+      "options": [
+        "Death",
+        "A crown",
+        "A feast",
+        "A voyage of joy only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus said he decided to send Paul to Rome because Paul appealed to the Emperor. But Festus had nothing definite to write. He hoped Agrippa could help so he would have something to write. Agrippa said to Festus, I would like to hear this man myself. When?",
+      "options": [
+        "Tomorrow",
+        "In a year",
+        "Never",
+        "At midnight"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The next day Agrippa and Bernice came with great pomp and entered the audience room with the high-ranking military officers and the prominent men of the city. At Festus’s command, Paul was brought in. Festus said King Agrippa and all who are present, you see this man. The whole Jewish community has petitioned that he ought not to live any longer. Festus said he found Paul had done nothing deserving death, but since he made his appeal to the Emperor I decided to send him to Rome. Festus had nothing certain to write. For this reason I have brought him before all of you, and especially before you, King Agrippa. Then Agrippa said to Paul, You have permission to speak for yourself. This last is start of ch26 - stay in 25. Festus hoped for help writing to whom?",
+      "options": [
+        "His Majesty / the Emperor",
+        "Ananias",
+        "James",
+        "Gallio"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I am king and I came with Bernice to pay respects to Festus. Who am I?",
+      "options": [
+        "Agrippa",
+        "Felix",
+        "Lysias",
+        "Tertullus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I am with King Agrippa. Who am I?",
+      "options": [
+        "Bernice",
+        "Drusilla",
+        "Priscilla",
+        "Lydia"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: The Jews were preparing an ambush to kill Paul along the way.",
+      "options": [
+        "True",
+        "False",
+        "False — they wanted a fair trial only",
+        "True — Festus agreed at once to send him"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul was being held in which city?",
+      "options": [
+        "Caesarea",
+        "Jerusalem only",
+        "Rome already",
+        "Tarsus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: Paul said he had done nothing wrong against Caesar.",
+      "options": [
+        "True",
+        "False — he admitted treason",
+        "False — he never spoke",
+        "True — but he refused to appeal"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul said, I appeal to _____!",
+      "options": [
+        "Caesar",
+        "Ananias",
+        "Zeus",
+        "Felix"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who said, To Caesar you will go?",
+      "options": [
+        "Festus",
+        "Agrippa",
+        "Bernice",
+        "Ananias"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus said it is not the Roman custom to condemn a person before the accused meets the accusers and has an opportunity to do what?",
+      "options": [
+        "Defend himself against their charges",
+        "Pay a bribe",
+        "Run away",
+        "Sing"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus said their dispute was about their own religion and about a dead man named Jesus who Paul claimed was what?",
+      "options": [
+        "Alive",
+        "A rebel",
+        "A priest of Zeus",
+        "Unknown"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: Festus was at a loss how to investigate such matters.",
+      "options": [
+        "True",
+        "False — he understood everything",
+        "False — he set Paul free",
+        "True — so he killed Paul"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who came with great pomp into the audience room?",
+      "options": [
+        "Agrippa and Bernice",
+        "Ananias only",
+        "Tertullus only",
+        "Lysias only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who commanded that Paul be brought in before that assembly?",
+      "options": [
+        "Festus",
+        "Ananias",
+        "James",
+        "Gallio"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus said the whole Jewish community has petitioned me both in Jerusalem and here. They shouted that he ought not to what?",
+      "options": [
+        "Live any longer",
+        "Be crowned",
+        "Go to Rome as a friend",
+        "Teach"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: Festus found Paul had done nothing deserving of death.",
+      "options": [
+        "True",
+        "False",
+        "False — he found him guilty of riot he proved",
+        "True — so he freed him without appeal"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus said it seems unreasonable to send a prisoner on without indicating the charges against him. To whom would he write?",
+      "options": [
+        "The Emperor / His Majesty",
+        "Ananias",
+        "James",
+        "the Sanhedrin only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus went up from Caesarea to where three days after arriving?",
+      "options": [
+        "Jerusalem",
+        "Rome",
+        "Tarsus",
+        "Antioch"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "After eight or ten days Festus went down to where?",
+      "options": [
+        "Caesarea",
+        "Rome",
+        "Tarsus",
+        "Antioch"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who convened the court the day after arriving back?",
+      "options": [
+        "Festus",
+        "Agrippa that day",
+        "Ananias",
+        "Bernice"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: The Jews could not prove their serious charges.",
+      "options": [
+        "True",
+        "False — they proved all of them",
+        "False — they brought no charges",
+        "True — so Festus freed Paul at once"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who asked if Paul would go to Jerusalem to stand trial?",
+      "options": [
+        "Festus",
+        "Agrippa",
+        "Ananias",
+        "Bernice"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul said no one has the right to hand me over to them. I appeal to _____.",
+      "options": [
+        "Caesar",
+        "Festus as final",
+        "Ananias",
+        "Zeus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus conferred with his council before answering Paul. Then he said To Caesar you will go. Who heard the case plan next?",
+      "options": [
+        "Agrippa",
+        "Felix again",
+        "Gallio",
+        "Lysias only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Agrippa and Bernice came to Caesarea to do what?",
+      "options": [
+        "Pay their respects to Festus",
+        "Arrest Festus",
+        "Free Paul secretly",
+        "Build a temple"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus said the accusers did not charge Paul with any of the crimes I had expected. Instead they had some points of dispute about their own religion and about whom?",
+      "options": [
+        "A dead man named Jesus who Paul claimed was alive",
+        "Zeus",
+        "Caesar as god",
+        "Moses only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Agrippa said he would like to hear Paul himself. Festus said when?",
+      "options": [
+        "Tomorrow",
+        "Next year",
+        "Never",
+        "After a voyage"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "High-ranking military officers and prominent men of the city entered with whom?",
+      "options": [
+        "Agrippa and Bernice",
+        "Only Ananias",
+        "Only the forty plotters",
+        "Only sailors"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: Paul stood before Caesar’s court in the sense of a Roman governor’s court and appealed to Caesar.",
+      "options": [
+        "True",
+        "False",
+        "False — he asked for Jerusalem",
+        "True — he was already in Rome"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I wished to do the Jews a favor and asked Paul to go to Jerusalem. Who am I?",
+      "options": [
+        "Festus",
+        "Felix still",
+        "Agrippa",
+        "Ananias"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The audience with Agrippa was held in Caesarea’s audience room. Who was brought in?",
+      "options": [
+        "Paul",
+        "Tertullus only",
+        "Lysias only",
+        "James"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Festus hoped after investigation he would have something to write. Without charges, sending a prisoner seemed what?",
+      "options": [
+        "Unreasonable",
+        "Wise",
+        "Required by Zeus",
+        "A feast"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The whole Jewish community petitioned me that Paul should not live. Who am I speaking to Agrippa?",
+      "options": [
+        "Festus",
+        "Felix",
+        "Lysias",
+        "Tertullus"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "lessonTitle": "Acts Chapter 8 — The Church Persecuted / Philip and the Ethiopian",
+  "questions": [
+    {
+      "questionText": "I approved of Stephen being killed. Who am I?",
+      "options": [
+        "Saul",
+        "Peter",
+        "Philip",
+        "Ananias of Damascus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What broke out against the church in Jerusalem that day?",
+      "options": [
+        "A great persecution",
+        "A feast",
+        "A flood",
+        "A census"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Where were the believers scattered?",
+      "options": [
+        "Throughout Judea and Samaria",
+        "Only to Rome",
+        "Only to Egypt",
+        "Nowhere"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who buried Stephen and mourned deeply for him?",
+      "options": [
+        "Godly men",
+        "Saul",
+        "The Sanhedrin",
+        "Soldiers"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who began to destroy the church, dragging off men and women to prison?",
+      "options": [
+        "Saul",
+        "Philip",
+        "Peter",
+        "The Ethiopian"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did those who were scattered do?",
+      "options": [
+        "They preached the word wherever they went",
+        "They stayed silent",
+        "They became soldiers",
+        "They hid the Scriptures forever"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Where did Philip go and proclaim the Messiah?",
+      "options": [
+        "A city in Samaria",
+        "Rome",
+        "Babylon",
+        "Nineveh"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "How did the crowds respond to Philip?",
+      "options": [
+        "They paid close attention to what he said",
+        "They stoned him",
+        "They ignored him",
+        "They sent him away"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I practiced sorcery in the city and amazed the people of Samaria. Who am I?",
+      "options": [
+        "Simon",
+        "Saul",
+        "Candace",
+        "the eunuch"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did people say about Simon?",
+      "options": [
+        "“This man is rightly called the Great Power of God.”",
+        "He is a priest",
+        "He is Caesar",
+        "He is Moses"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "When the people believed Philip, what did they do?",
+      "options": [
+        "They were baptized, both men and women",
+        "They crowned Simon",
+        "They left Samaria",
+        "They stopped listening"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: Simon himself believed and was baptized.",
+      "options": [
+        "True",
+        "False — he ran away",
+        "False — he never heard Philip",
+        "True — but he became an apostle that day"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "When the apostles in Jerusalem heard Samaria accepted the word, whom did they send?",
+      "options": [
+        "Peter and John",
+        "Saul and Barnabas",
+        "Stephen and Nicolas",
+        "Annas and Caiaphas"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did Peter and John do for the new believers?",
+      "options": [
+        "They prayed that they might receive the Holy Spirit and laid hands on them",
+        "They put them in jail",
+        "They sent them to Rome",
+        "They made them soldiers"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did Simon offer the apostles?",
+      "options": [
+        "Money for the power to give the Spirit",
+        "A field",
+        "A crown",
+        "A horse"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who said, “May your money perish with you”?",
+      "options": [
+        "Peter",
+        "John only",
+        "Philip",
+        "Simon"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Peter told Simon to do what?",
+      "options": [
+        "Repent of this wickedness and pray to the Lord",
+        "Buy more power",
+        "Leave Samaria forever without praying",
+        "Become high priest"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who said, “Pray to the Lord for me”?",
+      "options": [
+        "Simon",
+        "Philip",
+        "the eunuch",
+        "Saul"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who told Philip to go south to the desert road?",
+      "options": [
+        "An angel of the Lord",
+        "Peter",
+        "Simon",
+        "Candace"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I am an important official in charge of the treasury of the Kandake, queen of the Ethiopians. Who am I?",
+      "options": [
+        "The Ethiopian eunuch",
+        "Simon",
+        "Saul",
+        "Nicolas"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Where had the Ethiopian gone?",
+      "options": [
+        "To Jerusalem to worship",
+        "To Rome to fight",
+        "To Samaria to buy land",
+        "To Gaza to fish"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What was the Ethiopian reading in his chariot?",
+      "options": [
+        "The Book of Isaiah the prophet",
+        "The book of Moses only",
+        "A Roman letter",
+        "A song book"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who told Philip, “Go to that chariot and stay near it”?",
+      "options": [
+        "The Spirit",
+        "Simon",
+        "Peter",
+        "The queen"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Philip asked, “Do you understand what you are reading?” Who answered, “How can I unless someone explains it?”",
+      "options": [
+        "The Ethiopian eunuch",
+        "Simon",
+        "Saul",
+        "Candace"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The passage he read was about whom being led like a sheep to the slaughter?",
+      "options": [
+        "Jesus, as Philip explained from Isaiah",
+        "David",
+        "Moses",
+        "Philip"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did the eunuch say when they came to some water?",
+      "options": [
+        "“Look, here is water. What can stand in the way of my being baptized?”",
+        "“I am afraid of water.”",
+        "“Let us go back.”",
+        "“Call Simon.”"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did Philip do?",
+      "options": [
+        "He baptized the eunuch",
+        "He took the chariot",
+        "He went to Ethiopia that day",
+        "He called Peter"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What happened to Philip when they came up out of the water?",
+      "options": [
+        "The Spirit of the Lord suddenly took Philip away",
+        "He rode in the chariot to Ethiopia",
+        "He fell asleep",
+        "He went back to jail"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Where did Philip appear and keep preaching?",
+      "options": [
+        "Azotus, then all the towns until Caesarea",
+        "Rome only",
+        "Babylon",
+        "Nineveh"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The desert road went down from Jerusalem to where?",
+      "options": [
+        "Gaza",
+        "Rome",
+        "Damascus",
+        "Cyprus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I am queen of the Ethiopians, also called Kandake. Who am I?",
+      "options": [
+        "Candace (the Kandake)",
+        "Mary",
+        "Sapphira",
+        "Rhoda"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: The apostles stayed in Jerusalem during the persecution.",
+      "options": [
+        "True — all except the apostles were scattered",
+        "False — the apostles fled first",
+        "False — no one left",
+        "True — but Saul stayed with the church"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who proclaimed the Messiah in Samaria?",
+      "options": [
+        "Philip",
+        "Saul",
+        "Annas",
+        "the eunuch"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Peter told Simon his heart was not right before God. What else did he say Simon was full of?",
+      "options": [
+        "Bitterness and captive to sin",
+        "Joy only",
+        "The Spirit already",
+        "Gold only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I invited Philip to sit with me in my chariot. Who am I?",
+      "options": [
+        "The Ethiopian eunuch",
+        "Simon",
+        "Saul",
+        "Peter"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "After being baptized, how did the eunuch go on his way?",
+      "options": [
+        "Rejoicing",
+        "Crying",
+        "Angry",
+        "Lost"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Philip reached which city after Azotus?",
+      "options": [
+        "Caesarea",
+        "Damascus",
+        "Antioch",
+        "Lystra"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who performed signs in Samaria including impure spirits coming out and the paralyzed and lame being healed?",
+      "options": [
+        "Philip",
+        "Simon by magic only",
+        "Saul",
+        "Annas"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: There was great joy in that city of Samaria.",
+      "options": [
+        "True",
+        "False — they were angry",
+        "False — the city was empty",
+        "True — but only Simon rejoiced"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I thought I could buy the gift of God with money. Who am I?",
+      "options": [
+        "Simon",
+        "Philip",
+        "the eunuch",
+        "Barnabas"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

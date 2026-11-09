@@ -1,0 +1,485 @@
+{
+  "lessonTitle": "Acts Chapter 7 — Stephen’s Speech / The Stoning of Stephen",
+  "questions": [
+    {
+      "questionText": "Who asked Stephen, “Are these charges true?”",
+      "options": [
+        "The high priest",
+        "Peter",
+        "Pilate",
+        "Gamaliel"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Stephen said the God of glory appeared to me in Mesopotamia. Who am I?",
+      "options": [
+        "Abraham",
+        "Moses",
+        "Joseph",
+        "David"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Where did God tell Abraham to leave?",
+      "options": [
+        "His country and his people",
+        "The temple",
+        "Rome",
+        "The sea"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Where did Abraham then live?",
+      "options": [
+        "Haran, and later this land where you are now living",
+        "Egypt only",
+        "Rome",
+        "Nineveh"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: God gave Abraham no inheritance here, not even enough ground to set his foot on.",
+      "options": [
+        "True",
+        "False — God gave him the whole city that day",
+        "False — Abraham bought a palace",
+        "True — but he ruled Rome"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "God said Abraham’s descendants would be strangers in a country for how many years?",
+      "options": [
+        "Forty",
+        "Four hundred",
+        "Twelve",
+        "Seven"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "God gave Abraham the covenant of circumcision. Who then circumcised Isaac on the eighth day?",
+      "options": [
+        "Abraham",
+        "Moses",
+        "Joseph",
+        "Pharaoh"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The patriarchs were jealous of me and sold me into Egypt. Who am I?",
+      "options": [
+        "Joseph",
+        "Moses",
+        "David",
+        "Samuel"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who was with Joseph and rescued him from all his troubles?",
+      "options": [
+        "God",
+        "Pharaoh only",
+        "The brothers",
+        "Pilate"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I made Joseph ruler over Egypt and my entire palace. Who am I?",
+      "options": [
+        "Pharaoh, king of Egypt",
+        "Abraham",
+        "Moses",
+        "Caiaphas"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What came over all Egypt and Canaan?",
+      "options": [
+        "A famine",
+        "A flood",
+        "A war with Rome",
+        "A party"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "On Jacob’s second visit, how many of Joseph’s family were brought to Egypt?",
+      "options": [
+        "Twelve",
+        "Seventy-five in all",
+        "Three",
+        "Four hundred"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Where did Jacob die, and where was he laid in the tomb?",
+      "options": [
+        "He died in Egypt and was laid in the tomb in Shechem",
+        "He died in Rome",
+        "He was buried at sea",
+        "He never died"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "A new king who knew nothing about Joseph came to power in Egypt. What did he do to our people?",
+      "options": [
+        "He oppressed them and forced them to throw out their newborn babies",
+        "He made them kings",
+        "He sent them to Rome",
+        "He built them palaces"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I was born at that time, no ordinary child. Who am I?",
+      "options": [
+        "Moses",
+        "Stephen",
+        "Saul",
+        "David"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "For how many months was Moses cared for in his father’s house?",
+      "options": [
+        "Three months",
+        "Twelve months",
+        "Forty months",
+        "Seven days"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who took Moses and brought him up as her own son?",
+      "options": [
+        "Pharaoh’s daughter",
+        "Mary",
+        "Sarah",
+        "Rebekah"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What was Moses educated in?",
+      "options": [
+        "All the wisdom of the Egyptians",
+        "Only fishing",
+        "Only farming",
+        "Roman law"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "When Moses was how old did he visit his own people?",
+      "options": [
+        "Twenty",
+        "Forty",
+        "Eighty",
+        "Twelve"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What did Moses do when he saw an Israelite being mistreated?",
+      "options": [
+        "He killed the Egyptian",
+        "He ran to Midian first",
+        "He called Pharaoh",
+        "He hid in the temple"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Where did Moses flee as a stranger?",
+      "options": [
+        "Midian",
+        "Rome",
+        "Cyprus",
+        "Babylon"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "How many years later did an angel appear to Moses in the flames of a burning bush?",
+      "options": [
+        "Forty years",
+        "Three years",
+        "Seven years",
+        "One year"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Where was the burning bush?",
+      "options": [
+        "Near Mount Sinai, in the desert of Mount Sinai",
+        "In Egypt’s palace",
+        "In Jerusalem",
+        "In Haran"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who said, “I am the God of your fathers, the God of Abraham, Isaac and Jacob”?",
+      "options": [
+        "The Lord at the bush",
+        "Pharaoh",
+        "Aaron",
+        "Stephen’s accusers"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did God tell Moses to do because the place was holy?",
+      "options": [
+        "Take off your sandals",
+        "Build a wall",
+        "Run away",
+        "Sing a song"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Whom did God send back to Egypt to rescue Israel?",
+      "options": [
+        "Moses",
+        "Joseph",
+        "David",
+        "Saul"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did Moses do in Egypt, at the Red Sea, and for forty years in the wilderness?",
+      "options": [
+        "He led them out performing wonders and signs",
+        "He became Pharaoh",
+        "He hid",
+        "He built Rome"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Moses told Israel God would raise up a prophet like him. Stephen quotes this to point to whom?",
+      "options": [
+        "Jesus, the prophet like Moses",
+        "Pharaoh",
+        "Aaron only",
+        "Samuel only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did their ancestors ask Aaron to make?",
+      "options": [
+        "Gods who will go before us (a calf)",
+        "A boat",
+        "A palace",
+        "A new law book"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "God turned away and gave them over to worship the sun, moon and stars, as written in which book does Stephen mention later about the tent?",
+      "options": [
+        "The book of the prophets / tent of Moloch mentioned",
+        "The book of Rome",
+        "A fishing guide",
+        "A tax list"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did their ancestors have in the wilderness?",
+      "options": [
+        "The tabernacle of the covenant law",
+        "A stone palace",
+        "A Roman fort",
+        "A golden city"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I asked to find a dwelling place for the God of Jacob, and my son built God a house. Who am I?",
+      "options": [
+        "David (Solomon built the house)",
+        "Moses",
+        "Abraham",
+        "Joseph"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: Stephen said the Most High does not live in houses made by human hands.",
+      "options": [
+        "True",
+        "False — God only lives in Solomon’s temple",
+        "False — Stephen never spoke of God",
+        "True — God lives only in Rome"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Stephen said, “You stiff-necked people! … You always resist the Holy Spirit.” To whom?",
+      "options": [
+        "The Sanhedrin / their ancestors’ pattern",
+        "Only children",
+        "Only Pharaoh",
+        "Only Moses"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Stephen said which of the prophets did their ancestors not persecute?",
+      "options": [
+        "They persecuted them all / they killed those who predicted the Righteous One",
+        "They loved every prophet",
+        "They ignored only Jonah",
+        "They crowned the prophets"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "You have betrayed and murdered me — the Righteous One. Who am I?",
+      "options": [
+        "Jesus",
+        "Moses",
+        "Abraham",
+        "David"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "How did the Sanhedrin react to Stephen’s speech?",
+      "options": [
+        "They were furious and gnashed their teeth at him",
+        "They clapped",
+        "They crowned him",
+        "They fell asleep"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did Stephen see when he was full of the Holy Spirit?",
+      "options": [
+        "Heaven open and the Son of Man standing at the right hand of God",
+        "A calf of gold",
+        "Pharaoh",
+        "A closed door"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did they do when they heard Stephen say that?",
+      "options": [
+        "They covered their ears, yelled, dragged him out of the city and began to stone him",
+        "They believed at once",
+        "They gave him gold",
+        "They sent him to Rome"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Witnesses laid their coats at my feet. I was a young man. Who am I?",
+      "options": [
+        "Saul",
+        "Peter",
+        "Gamaliel",
+        "Annas"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who said, “Lord Jesus, receive my spirit”?",
+      "options": [
+        "Stephen",
+        "Saul",
+        "The high priest",
+        "Moses"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who said, “Lord, do not hold this sin against them”?",
+      "options": [
+        "Stephen",
+        "Saul",
+        "Peter",
+        "Annas"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What happened after Stephen said that?",
+      "options": [
+        "He fell asleep (he died)",
+        "He ran away",
+        "He became king",
+        "He hid"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Where did they drag Stephen to stone him?",
+      "options": [
+        "Out of the city",
+        "Into the temple Holy Place",
+        "Onto a boat",
+        "Into Pharaoh’s palace"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I stood at God’s right hand while Stephen looked up. Who am I?",
+      "options": [
+        "The Son of Man (Jesus)",
+        "Moses",
+        "Abraham",
+        "Saul"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "How many years did Moses spend in Midian before the burning bush?",
+      "options": [
+        "Forty years",
+        "Three years",
+        "Seven days",
+        "One hundred"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I built a house for God after David asked for a dwelling place. Who am I?",
+      "options": [
+        "Solomon",
+        "Moses",
+        "Abraham",
+        "Saul"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "In which land was Moses born and later educated?",
+      "options": [
+        "Egypt",
+        "Rome",
+        "Canaan only",
+        "Cyprus"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

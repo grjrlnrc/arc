@@ -1,0 +1,425 @@
+{
+  "lessonTitle": "Acts Chapter 3 — Peter Heals a Lame Beggar",
+  "questions": [
+    {
+      "questionText": "Who were going up to the temple at the time of prayer?",
+      "options": [
+        "Peter and John",
+        "Paul and Barnabas",
+        "James and Andrew",
+        "Philip and Thomas"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What time of day was the time of prayer?",
+      "options": [
+        "Nine in the morning",
+        "Three in the afternoon",
+        "Midnight",
+        "Sunrise"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "I was lame from birth and was carried to the temple gate every day to beg. Who am I?",
+      "options": [
+        "A priest",
+        "The lame beggar",
+        "Pilate",
+        "A soldier"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What was the name of the temple gate where the lame man sat?",
+      "options": [
+        "The Golden Gate",
+        "Beautiful",
+        "The Sheep Gate",
+        "The Water Gate"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What did the lame man ask Peter and John for?",
+      "options": [
+        "Food",
+        "Money",
+        "A ride home",
+        "A job"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Who said to the lame man, “Look at us!”?",
+      "options": [
+        "John",
+        "Peter",
+        "A priest",
+        "The crowd"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What was the lame man expecting to get?",
+      "options": [
+        "Something from them (money)",
+        "A new house",
+        "A crown",
+        "A map"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who said, “Silver or gold I do not have, but what I do have I give you”?",
+      "options": [
+        "John",
+        "Peter",
+        "The lame man",
+        "A temple guard"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Peter said, “In the name of Jesus Christ of Nazareth, _____. ”",
+      "options": [
+        "sit down",
+        "walk",
+        "be quiet",
+        "go home"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Which hand did Peter use to help the man up?",
+      "options": [
+        "His left hand",
+        "His right hand",
+        "Both feet",
+        "He did not touch him"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What happened instantly to the man’s feet and ankles?",
+      "options": [
+        "They became weak",
+        "They became strong",
+        "They turned to stone",
+        "They started shaking only"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What did the man do after he was healed?",
+      "options": [
+        "He sat back down to beg",
+        "He jumped to his feet and began to walk",
+        "He ran away in fear",
+        "He went to sleep"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Where did the healed man go with Peter and John?",
+      "options": [
+        "To the marketplace",
+        "Into the temple courts",
+        "To Rome",
+        "To the palace"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What three things was the man doing in the temple courts?",
+      "options": [
+        "Walking, jumping, and praising God",
+        "Sleeping, eating, and hiding",
+        "Selling, buying, and counting",
+        "Fighting, shouting, and leaving"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "How did the people feel when they recognized the beggar walking?",
+      "options": [
+        "Angry",
+        "Filled with wonder and amazement",
+        "Bored",
+        "Sleepy"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Where did the astonished people come running?",
+      "options": [
+        "Solomon’s Colonnade",
+        "The palace yard",
+        "The city gate only",
+        "The Mount of Olives"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who was the healed man holding on to?",
+      "options": [
+        "Two priests",
+        "Peter and John",
+        "Pilate and Herod",
+        "Two soldiers"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Who asked, “Why do you stare at us as if by our own power or godliness we had made this man walk?”",
+      "options": [
+        "John",
+        "Peter",
+        "The lame man",
+        "A priest"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Peter said the God of Abraham, Isaac and Jacob has glorified me, his servant. Who am I?",
+      "options": [
+        "Moses",
+        "Jesus",
+        "Samuel",
+        "David"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Who had decided to let Jesus go, but the people disowned Jesus before him?",
+      "options": [
+        "Herod",
+        "Pilate",
+        "Caesar",
+        "Annas"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Who did the people ask to be released instead of the Holy and Righteous One?",
+      "options": [
+        "A prophet",
+        "A murderer",
+        "A priest",
+        "A king"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Peter said, “You killed the author of _____, but God raised him from the dead.”",
+      "options": [
+        "songs",
+        "life",
+        "laws",
+        "wars"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Who did Peter say are witnesses that God raised Jesus?",
+      "options": [
+        "The priests only",
+        "Peter and the other believers with him",
+        "Pilate’s soldiers",
+        "Only Abraham"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "How was the lame man made strong?",
+      "options": [
+        "By faith in the name of Jesus",
+        "By special medicine",
+        "By exercise only",
+        "By Roman doctors"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: Peter said the people and their leaders acted in ignorance.",
+      "options": [
+        "True",
+        "False — he said they knew everything",
+        "False — he blamed only Pilate",
+        "False — he said angels did it"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What had God foretold through all the prophets about the Messiah?",
+      "options": [
+        "That he would never suffer",
+        "That his Messiah would suffer",
+        "That he would rule Rome first",
+        "That he would hide forever"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Who said, “Repent, then, and turn to God, so that your sins may be wiped out”?",
+      "options": [
+        "John",
+        "Peter",
+        "Moses",
+        "Abraham"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What did Peter say may come from the Lord after they repent?",
+      "options": [
+        "Times of refreshing",
+        "A new temple tax",
+        "A storm",
+        "A war"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Heaven must receive me until God restores everything. Who am I?",
+      "options": [
+        "Samuel",
+        "Jesus the Messiah",
+        "Moses",
+        "David"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Who said, “The Lord your God will raise up for you a prophet like me”?",
+      "options": [
+        "Samuel",
+        "Moses",
+        "Abraham",
+        "Joel"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What did Moses say people must do with that prophet?",
+      "options": [
+        "Ignore him",
+        "Listen to everything he tells you",
+        "Send him away",
+        "Make him a soldier"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "What happens to anyone who does not listen to that prophet?",
+      "options": [
+        "They get extra gold",
+        "They will be completely cut off from their people",
+        "They become kings",
+        "Nothing happens"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Peter said that beginning with me, all the prophets have foretold these days. Who am I?",
+      "options": [
+        "Samuel",
+        "Noah",
+        "Jonah only",
+        "Daniel only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "What did Peter call the people in relation to the prophets?",
+      "options": [
+        "Enemies of the prophets",
+        "Heirs of the prophets and of the covenant",
+        "Strangers only",
+        "Roman rulers"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "To whom did God say, “Through your offspring all peoples on earth will be blessed”?",
+      "options": [
+        "Moses",
+        "Abraham",
+        "Samuel",
+        "David"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "When God raised up his servant, to whom did he send him first?",
+      "options": [
+        "To Rome first",
+        "To the people Peter was speaking to",
+        "To Egypt first",
+        "To the animals"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "How did God send Jesus to bless them?",
+      "options": [
+        "By giving them extra land only",
+        "By turning each of them from their wicked ways",
+        "By making them soldiers",
+        "By hiding them"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Where did Peter and John first meet the lame man?",
+      "options": [
+        "At the temple gate called Beautiful",
+        "At the sea",
+        "In a prison",
+        "On a mountain"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: Peter said he and John healed the man by their own power.",
+      "options": [
+        "True",
+        "False — he said not to stare as if it was their own power",
+        "True — he bragged about it",
+        "False — John said it was magic"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "People used to see me begging every day, then they saw me walking and praising God. Who am I?",
+      "options": [
+        "Peter",
+        "The man lame from birth",
+        "John",
+        "Pilate"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "Peter said “Look at us!” to whom?",
+      "options": [
+        "The crowd",
+        "The lame beggar",
+        "Pilate",
+        "A priest"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "questionText": "How long had the man been lame?",
+      "options": [
+        "One week",
+        "From birth",
+        "One year",
+        "Forty days"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

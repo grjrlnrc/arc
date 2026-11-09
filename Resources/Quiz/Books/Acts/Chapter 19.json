@@ -1,0 +1,475 @@
+{
+  "lessonTitle": "Acts Chapter 19 — Paul in Ephesus / The Riot",
+  "questions": [
+    {
+      "questionText": "While Apollos was at Corinth, Paul took the road through the interior and arrived at where?",
+      "options": [
+        "Ephesus",
+        "Rome",
+        "Athens",
+        "Antioch"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "There he found some disciples and asked if they received the Holy Spirit. What did they say?",
+      "options": [
+        "No, we have not even heard that there is a Holy Spirit",
+        "Yes long ago",
+        "We received Zeus",
+        "We are priests"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul asked, Then what baptism did you receive? They said?",
+      "options": [
+        "John’s baptism",
+        "Jesus’ baptism already",
+        "No baptism",
+        "Roman washing"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "On hearing this they were baptized in the name of the Lord Jesus. About how many men were there?",
+      "options": [
+        "About twelve",
+        "Three thousand",
+        "Five thousand",
+        "Two"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "When Paul placed his hands on them, what happened?",
+      "options": [
+        "The Holy Spirit came on them, and they spoke in tongues and prophesied",
+        "They fell asleep",
+        "They ran away",
+        "They became soldiers"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul entered the synagogue and spoke boldly for how many months?",
+      "options": [
+        "Three months",
+        "Three years first",
+        "One day",
+        "Forty days"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "When some became obstinate, Paul left and had discussions daily in the lecture hall of whom?",
+      "options": [
+        "Tyrannus",
+        "Demetrius",
+        "Sceva",
+        "Alexander"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "This went on for how many years so that all the Jews and Greeks in the province of Asia heard the word?",
+      "options": [
+        "Two years",
+        "Forty years",
+        "One week",
+        "Ten days"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "God did extraordinary miracles through Paul. Even what were taken to the sick?",
+      "options": [
+        "Handkerchiefs and aprons that had touched him",
+        "Gold coins only",
+        "Idols of Artemis",
+        "Stones"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I am a Jewish chief priest. My seven sons tried to drive out evil spirits using Jesus’ name. Who am I?",
+      "options": [
+        "Sceva",
+        "Demetrius",
+        "Tyrannus",
+        "Alexander"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The evil spirit answered, Jesus I know, and Paul I know about, but who are you? Then what?",
+      "options": [
+        "The man gave them a beating and they ran out naked and bleeding",
+        "They won",
+        "They baptized the spirit",
+        "They became rich"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "This became known to the Jews and Greeks living in where?",
+      "options": [
+        "Ephesus",
+        "Rome",
+        "Corinth",
+        "Athens"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Many who believed came and openly confessed. A number who had practiced sorcery did what?",
+      "options": [
+        "Brought their scrolls together and burned them publicly",
+        "Hid the scrolls",
+        "Sold them to Rome",
+        "Gave them to Artemis"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "When they calculated the value of the scrolls, it came to how many drachmas?",
+      "options": [
+        "Fifty thousand",
+        "Twelve",
+        "Three thousand",
+        "Forty"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "In this way the word of the Lord spread widely and grew in what?",
+      "options": [
+        "Power",
+        "Silence",
+        "Gold only",
+        "Fear of Artemis only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul decided to go to Jerusalem, passing through Macedonia and Achaia. After that he must visit where?",
+      "options": [
+        "Rome",
+        "Spain first in this verse",
+        "Egypt",
+        "Cyprus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "He sent two of his helpers to Macedonia. Who were they?",
+      "options": [
+        "Timothy and Erastus",
+        "Demetrius and Alexander",
+        "Sceva’s sons",
+        "Gaius and Aristarchus only later"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I am a silversmith who made silver shrines of Artemis. Who am I?",
+      "options": [
+        "Demetrius",
+        "Sceva",
+        "Tyrannus",
+        "Alexander"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Demetrius said Paul is saying that gods made by human hands are no gods at all. What might happen to their trade?",
+      "options": [
+        "They would lose their good name and the temple of Artemis would be discredited",
+        "They would get richer",
+        "Rome would pay them",
+        "Paul would buy shrines"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "When they heard this they were furious and began shouting what?",
+      "options": [
+        "Great is Artemis of the Ephesians!",
+        "Great is Paul!",
+        "Great is Rome!",
+        "Be silent!"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The city was in an uproar. People seized Gaius and Aristarchus and rushed into where?",
+      "options": [
+        "The theater",
+        "The synagogue",
+        "The lecture hall only",
+        "A boat"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul wanted to appear before the crowd, but whom would not let him?",
+      "options": [
+        "The disciples",
+        "Demetrius",
+        "Sceva",
+        "Tyrannus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Even some of the officials of the province, friends of Paul, begged him not to do what?",
+      "options": [
+        "Venture into the theater",
+        "Leave town",
+        "Preach",
+        "Pray"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: The assembly was in confusion; most of the people did not even know why they were there.",
+      "options": [
+        "True",
+        "False — everyone knew",
+        "False — it was quiet",
+        "True — they all loved Paul"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The Jews pushed me to the front. I motioned for silence but they shouted me down. Who am I?",
+      "options": [
+        "Alexander",
+        "Demetrius",
+        "Gaius",
+        "Erastus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "They all shouted in unison for about how long: Great is Artemis of the Ephesians!?",
+      "options": [
+        "About two hours",
+        "Two minutes",
+        "Two days",
+        "Forty days"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who quieted the crowd and said Ephesus is the guardian of the temple of the great Artemis?",
+      "options": [
+        "The city clerk",
+        "Demetrius",
+        "Alexander",
+        "Paul"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The clerk said if Demetrius has a grievance they can do what?",
+      "options": [
+        "Bring charges. This gathering risks being charged with rioting",
+        "Stone Paul now",
+        "Burn the theater",
+        "Crown Artemis’s priest as king"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "After he had said this, he dismissed the what?",
+      "options": [
+        "Assembly",
+        "Army",
+        "Ship",
+        "Temple"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I am Paul’s traveling companion from Macedonia seized with Gaius. Who am I?",
+      "options": [
+        "Aristarchus",
+        "Sceva",
+        "Tyrannus",
+        "Erastus only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul stayed in Ephesus a little longer after planning to go through Macedonia. Where did he remain while sending helpers?",
+      "options": [
+        "Asia / Ephesus",
+        "Rome",
+        "Athens",
+        "Corinth only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: Illnesses left the sick and evil spirits went out when cloths that touched Paul were used.",
+      "options": [
+        "True",
+        "False",
+        "False — only words worked",
+        "True — but only in Rome"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I am Artemis, and Demetrius said the world worships me. Who is this goddess of?",
+      "options": [
+        "The Ephesians",
+        "Rome only",
+        "Athens only",
+        "Egypt only"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul had discussions daily in whose lecture hall?",
+      "options": [
+        "Tyrannus",
+        "Sceva",
+        "Demetrius",
+        "Gallio"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: All the Jews and Greeks who lived in the province of Asia heard the word of the Lord.",
+      "options": [
+        "True",
+        "False",
+        "False — only twelve men",
+        "True — but they all rejected it"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who tried to invoke the name of the Lord Jesus over those who were demon-possessed?",
+      "options": [
+        "Some Jews who went around driving out evil spirits",
+        "Timothy",
+        "Erastus",
+        "the city clerk"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The evil spirit said, Jesus I know, and Paul I know about, but who are _____?",
+      "options": [
+        "you",
+        "we",
+        "they",
+        "gods"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Fear seized them all and the name of the Lord Jesus was what?",
+      "options": [
+        "Held in high honor",
+        "Forgotten",
+        "Banned forever",
+        "Traded for gold"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "I am one of Paul’s helpers sent to Macedonia with Timothy. Who am I?",
+      "options": [
+        "Erastus",
+        "Sceva",
+        "Demetrius",
+        "Alexander"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "True or false: There arose a great disturbance about the Way.",
+      "options": [
+        "True",
+        "False",
+        "False — it was peaceful",
+        "True — but only in Jerusalem"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "About how many men were in the group of disciples Paul found at Ephesus who had received John’s baptism?",
+      "options": [
+        "About twelve",
+        "About three thousand",
+        "About five hundred",
+        "About seventy"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "When Paul laid hands on them, they spoke in tongues and what else?",
+      "options": [
+        "Prophesied",
+        "Fainted",
+        "Fled the city",
+        "Built a temple"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Paul spoke boldly in the synagogue for how many months?",
+      "options": [
+        "Three months",
+        "One week",
+        "Ten years",
+        "Forty days"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "After leaving the synagogue, Paul had discussions daily in the lecture hall of whom?",
+      "options": [
+        "Tyrannus",
+        "Gallio",
+        "Felix",
+        "Festus"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "This went on for two years, so that all the Jews and Greeks who lived in the province of Asia heard the word of the Lord. Where was Paul?",
+      "options": [
+        "Ephesus",
+        "Rome",
+        "Athens",
+        "Babylon"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "Who made silver shrines of Artemis and started a riot?",
+      "options": [
+        "Demetrius",
+        "Sergius Paulus",
+        "Cornelius",
+        "Ananias"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "questionText": "The city clerk said the rioters were in danger of being charged with what?",
+      "options": [
+        "Rioting",
+        "Theft",
+        "Murder",
+        "Treason against Caesar only"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
