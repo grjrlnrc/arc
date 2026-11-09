@@ -29,19 +29,8 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
 const probeFile = path.join(resourcesDir, "__server_probe.txt");
 const caseDir = path.join(resourcesDir, "__CaseCheck__");
+const serverDir = path.join(resourcesDir, "__ServerCheck__");
 const binaryExtensions = new Set([".pdf", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".ico"]);
-
-const quizPaths = new Set([
-  "Resources/Scripture/Acts/acts-opening.json",
-  "Resources/வேத பாடங்கள்/யோவான் 3.json",
-]);
-
-const resourceJsonPaths = new Set([
-  "Resources/Scripture/Acts/almost.json",
-  "Resources/Scripture/Acts/broken.json",
-  "Resources/Scripture/Acts/legacy-format.json",
-  "Resources/Scripture/Acts/study-notes.json",
-]);
 
 function request(urlPath) {
   return new Promise((resolve, reject) => {
@@ -239,12 +228,13 @@ function assertAttemptBehavior() {
 
 function assertShuffleVaries(data) {
   const questionOrders = new Set();
-  const answerOrders = new Map(data.questions.map((item) => [item.question, new Set()]));
+  const answerOrders = new Map();
   for (let index = 0; index < 40; index += 1) {
     const attempt = createAttempt(data);
     questionOrders.add(attempt.questions.map((item) => item.question).join("|"));
     for (const item of attempt.questions) {
       assert.equal(item.answers.includes(item.correct), true);
+      if (!answerOrders.has(item.question)) answerOrders.set(item.question, new Set());
       answerOrders.get(item.question).add(item.answers.join("|"));
     }
   }
