@@ -7,6 +7,8 @@ const QUESTION_KEYS = new Set([
   "verseText",
   "explanation",
 ]);
+const CHAPTER_QUIZ_KEYS = new Set(["lessonTitle", "questions"]);
+const CHAPTER_QUESTION_KEYS = new Set(["questionText", "options", "correctIndex"]);
 const IMAGE_EXTENSIONS = new Set([
   ".png",
   ".jpg",
@@ -60,9 +62,29 @@ function isQuizQuestion(question) {
   return question.answers.some((answer) => answer === question.correct);
 }
 
+// Index-based chapter format used by the Resources/Quiz folder.
+export function isChapterQuiz(data) {
+  if (data === null || typeof data !== "object" || Array.isArray(data)) return false;
+  if (!hasExactKeys(data, CHAPTER_QUIZ_KEYS)) return false;
+  if (!isNonEmptyString(data.lessonTitle)) return false;
+  if (!Array.isArray(data.questions) || data.questions.length === 0) return false;
+  return data.questions.every(isChapterQuestion);
+}
+
+function isChapterQuestion(question) {
+  if (question === null || typeof question !== "object" || Array.isArray(question)) return false;
+  if (!hasExactKeys(question, CHAPTER_QUESTION_KEYS)) return false;
+  if (!isNonEmptyString(question.questionText)) return false;
+  if (!Array.isArray(question.options) || question.options.length !== 4) return false;
+  if (!question.options.every(isNonEmptyString)) return false;
+  const index = question.correctIndex;
+  return Number.isInteger(index) && index >= 0 && index < question.options.length;
+}
+
 export function classifyJsonText(text) {
   try {
-    return isScriptureQuiz(JSON.parse(text)) ? "quiz" : "resource";
+    const data = JSON.parse(text);
+    return isScriptureQuiz(data) || isChapterQuiz(data) ? "quiz" : "resource";
   } catch {
     return "resource";
   }
@@ -79,13 +101,32 @@ export function shuffle(items, random = Math.random) {
   return copy;
 }
 
-export function createAttempt(data, random = Math.random) {
-  if (!isScriptureQuiz(data)) throw new Error("Not a scripture quiz");
+// Normalize either quiz shape into the internal attempt source.
+// Chapter quizzes carry no verse or explanation, so those stay null.
+function canonicalQuiz(data) {
+  if (isScriptureQuiz(data)) return data;
+  if (!isChapterQuiz(data)) return null;
   return {
-    topic: data.topic,
+    topic: data.lessonTitle,
+    questions: data.questions.map((question) => ({
+      question: question.questionText,
+      answers: [...question.options],
+      correct: question.options[question.correctIndex],
+      verse: null,
+      verseText: null,
+      explanation: null,
+    })),
+  };
+}
+
+export function createAttempt(data, random = Math.random) {
+  const quiz = canonicalQuiz(data);
+  if (!quiz) throw new Error("Not a scripture quiz");
+  return {
+    topic: quiz.topic,
     index: 0,
     questions: shuffle(
-      data.questions.map((question) => ({
+      quiz.questions.map((question) => ({
         question: question.question,
         answers: shuffle(question.answers, random),
         correct: question.correct,
@@ -279,6 +320,18 @@ function goTo(segments) {
     return;
   }
   location.hash = segments.length ? `#/${segments.map((segment) => encodeURIComponent(segment)).join("/")}` : "#/";
+}
+
+function goToQuiz() {
+  if (!state.catalog) {
+    // Catalog not ready yet; renderFromHash picks the hash up once it loads.
+    location.hash = "#/Quiz";
+    return;
+  }
+  const quiz = state.catalog.items.find(
+    (item) => item.type === "folder" && item.name.toLowerCase() === "quiz",
+  );
+  goTo(quiz ? [quiz.name] : []);
 }
 
 function renderFromHash({ scroll = true } = {}) {
@@ -579,14 +632,10 @@ function renderFeedback(question) {
   const status = document.createElement("p");
   status.className = model.correct ? "feedback-status is-correct" : "feedback-status is-wrong";
   applyText(status, model.correct ? "Correct" : "Incorrect");
-  feedback.append(
-    status,
-    metaLabel("Verse"),
-    textBlock("p", "verse-ref", model.verse),
-    textBlock("blockquote", "verse-text", model.verseText),
-    metaLabel("Explanation"),
-    textBlock("p", "explanation", model.explanation),
-  );
+  feedback.append(status);
+  if (model.verse) feedback.append(metaLabel("Verse"), textBlock("p", "verse-ref", model.verse));
+  if (model.verseText) feedback.append(textBlock("blockquote", "verse-text", model.verseText));
+  if (model.explanation) feedback.append(metaLabel("Explanation"), textBlock("p", "explanation", model.explanation));
 }
 
 function renderResults() {
@@ -604,15 +653,10 @@ function renderResults() {
     kicker.textContent = `Question ${index + 1} · ${gotIt ? "Correct" : "Incorrect"}`;
     item.append(kicker, textBlock("p", "review-question", question.question));
     if (!gotIt) item.append(metaLabel("Your answer"), chip(question.selected, "is-wrong"));
-    item.append(
-      metaLabel("Correct answer"),
-      chip(question.correct, "is-correct"),
-      metaLabel("Verse"),
-      textBlock("p", "verse-ref", question.verse),
-      textBlock("blockquote", "verse-text", question.verseText),
-      metaLabel("Explanation"),
-      textBlock("p", "explanation", question.explanation),
-    );
+    item.append(metaLabel("Correct answer"), chip(question.correct, "is-correct"));
+    if (question.verse) item.append(metaLabel("Verse"), textBlock("p", "verse-ref", question.verse));
+    if (question.verseText) item.append(textBlock("blockquote", "verse-text", question.verseText));
+    if (question.explanation) item.append(metaLabel("Explanation"), textBlock("p", "explanation", question.explanation));
     list.append(item);
   });
 }
@@ -642,7 +686,7 @@ function boot() {
   document.getElementById("all-folders").addEventListener("click", () => goTo([]));
   document.querySelector(".cta").addEventListener("click", (event) => {
     event.preventDefault();
-    goTo([]);
+    goToQuiz();
   });
 
   const dialog = document.getElementById("quiz-dialog");

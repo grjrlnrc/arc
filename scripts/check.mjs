@@ -11,6 +11,7 @@ import {
   feedbackFor,
   goNext,
   goPrevious,
+  isChapterQuiz,
   isScriptureQuiz,
   partitionFolder,
   readyForResults,
@@ -32,6 +33,9 @@ const quizPaths = new Set([
   "Resources/Scripture/Acts/acts-opening.json",
   "Resources/வேத பாடங்கள்/யோவான் 3.json",
 ]);
+for (let chapter = 1; chapter <= 28; chapter += 1) {
+  quizPaths.add(`Resources/Quiz/Books/Acts/Chapter ${chapter}.json`);
+}
 
 const resourceJsonPaths = new Set([
   "Resources/Scripture/Acts/almost.json",
@@ -104,6 +108,28 @@ function assertSchema() {
   assert.equal(classifyJsonText("{"), "resource");
   assert.equal(classifyJsonText(JSON.stringify(quiz())), "quiz");
   assert.equal(classifyJsonText(JSON.stringify({ correctIndex: 1 })), "resource");
+
+  const chapter = {
+    lessonTitle: "Acts Chapter 1",
+    questions: [
+      { questionText: "Who am I?", options: ["Peter", "Theophilus", "Luke", "John"], correctIndex: 2 },
+    ],
+  };
+  assert.equal(isChapterQuiz(chapter), true);
+  assert.equal(isChapterQuiz(null), false);
+  assert.equal(isChapterQuiz({ ...chapter, note: "extra" }), false);
+  assert.equal(isChapterQuiz({ ...chapter, lessonTitle: "  " }), false);
+  assert.equal(isChapterQuiz({ ...chapter, questions: [] }), false);
+  assert.equal(isChapterQuiz({ ...chapter, questions: [{ questionText: "Q", options: ["A", "B", "C"], correctIndex: 0 }] }), false);
+  assert.equal(isChapterQuiz({ ...chapter, questions: [{ questionText: "Q", options: ["A", "B", "C", "D"], correctIndex: 4 }] }), false);
+  assert.equal(isChapterQuiz({ ...chapter, questions: [{ questionText: "Q", options: ["A", "B", "C", "D"], correctIndex: "2" }] }), false);
+  assert.equal(isChapterQuiz({ ...chapter, questions: [{ questionText: "Q", options: ["A", "", "C", "D"], correctIndex: 0 }] }), false);
+  assert.equal(classifyJsonText(JSON.stringify(chapter)), "quiz");
+  const chapterAttempt = createAttempt(chapter, () => 0);
+  assert.equal(chapterAttempt.topic, "Acts Chapter 1");
+  assert.equal(chapterAttempt.questions[0].correct, "Luke");
+  assert.equal(chapterAttempt.questions[0].answers.length, 4);
+  assert.equal(chapterAttempt.questions[0].verse, null);
 }
 
 function assertAttemptBehavior() {
@@ -259,7 +285,7 @@ async function assertSources() {
   assert.match(css, /Noto Sans Tamil/);
   const noStore = app.match(/cache:\s*"no-store"/g) ?? [];
   assert.ok(noStore.length >= 2, "catalog and quiz fetches must set cache no-store");
-  assert.doesNotMatch(app, /innerHTML|insertAdjacentHTML|document\.write|correctIndex/);
+  assert.doesNotMatch(app, /innerHTML|insertAdjacentHTML|document\.write/);
   assert.deepEqual(app.match(/\.translation\b/g), [".translation"]);
   assert.match(app, /isNonEmptyString\(data\.translation\)/);
   assert.match(app, /QUESTION \$\{current\} OF \$\{total\}/);
@@ -301,8 +327,13 @@ function assertCatalogShape(catalog) {
   assert.ok(Array.isArray(catalog.items));
   assert.deepEqual(
     catalog.items.map((item) => item.name),
-    ["Confessions", "Creeds", "Scripture", "வேத பாடங்கள்"],
+    ["Confessions", "Creeds", "Quiz", "Scripture", "வேத பாடங்கள்"],
   );
+  const quizFolder = catalog.items.find((item) => item.name === "Quiz");
+  const books = quizFolder?.items.find((item) => item.name === "Books");
+  const acts = books?.items.find((item) => item.name === "Acts");
+  assert.ok(acts, "Quiz/Books/Acts folder missing from catalog");
+  assert.equal(acts.items.filter((item) => item.extension === ".json").length, 28);
   walkItems(catalog.items, (item) => {
     for (const key of ["type", "title", "name", "path", "extension", "isImageFolder", "items"]) {
       assert.ok(Object.hasOwn(item, key), `${item.path || item.name} missing ${key}`);
@@ -370,6 +401,13 @@ async function assertSampleFiles() {
   assert.match(tamil.questions[0].question, /[\u0B80-\u0BFF]/);
   assert.equal(classifyJsonText(await fs.readFile(actsPath, "utf8")), "quiz");
   assert.equal(classifyJsonText(await fs.readFile(tamilPath, "utf8")), "quiz");
+  const chapterOne = JSON.parse(
+    await fs.readFile(path.join(resourcesDir, "Quiz", "Books", "Acts", "Chapter 1.json"), "utf8"),
+  );
+  assert.equal(isChapterQuiz(chapterOne), true);
+  assert.equal(classifyJsonText(JSON.stringify(chapterOne)), "quiz");
+  const chapterAttempt = createAttempt(chapterOne, () => 0);
+  assert.equal(chapterAttempt.questions.length, chapterOne.questions.length);
   for (const name of ["almost.json", "broken.json", "legacy-format.json", "study-notes.json"]) {
     const text = await fs.readFile(path.join(resourcesDir, "Scripture", "Acts", name), "utf8");
     assert.equal(classifyJsonText(text), "resource", name);
