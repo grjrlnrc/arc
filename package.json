@@ -1,0 +1,15 @@
+{
+  "name": "arc-reformed-learners",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ARC - Reformed Learners, a static mobile-first Bible learning browser.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "serve": "node scripts/local-server.mjs",
+    "catalog": "node scripts/generate-catalog.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

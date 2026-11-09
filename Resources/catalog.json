@@ -1,0 +1,240 @@
+{
+  "items": [
+    {
+      "type": "folder",
+      "title": "Confessions",
+      "name": "Confessions",
+      "path": "Resources/Confessions",
+      "extension": "",
+      "isImageFolder": false,
+      "items": [
+        {
+          "type": "folder",
+          "title": "Heidelberg",
+          "name": "Heidelberg",
+          "path": "Resources/Confessions/Heidelberg",
+          "extension": "",
+          "isImageFolder": false,
+          "items": [
+            {
+              "type": "file",
+              "title": "note",
+              "name": "note.txt",
+              "path": "Resources/Confessions/Heidelberg/note.txt",
+              "extension": ".txt",
+              "isImageFolder": false,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "title": "Creeds",
+      "name": "Creeds",
+      "path": "Resources/Creeds",
+      "extension": "",
+      "isImageFolder": false,
+      "items": [
+        {
+          "type": "folder",
+          "title": "Apostles",
+          "name": "Apostles",
+          "path": "Resources/Creeds/Apostles",
+          "extension": "",
+          "isImageFolder": false,
+          "items": [
+            {
+              "type": "file",
+              "title": "note",
+              "name": "note.txt",
+              "path": "Resources/Creeds/Apostles/note.txt",
+              "extension": ".txt",
+              "isImageFolder": false,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "title": "Scripture",
+      "name": "Scripture",
+      "path": "Resources/Scripture",
+      "extension": "",
+      "isImageFolder": false,
+      "items": [
+        {
+          "type": "folder",
+          "title": "Acts",
+          "name": "Acts",
+          "path": "Resources/Scripture/Acts",
+          "extension": "",
+          "isImageFolder": false,
+          "items": [
+            {
+              "type": "folder",
+              "title": "Letters",
+              "name": "Letters",
+              "path": "Resources/Scripture/Acts/Letters",
+              "extension": "",
+              "isImageFolder": false,
+              "items": [
+                {
+                  "type": "folder",
+                  "title": "Romans",
+                  "name": "Romans",
+                  "path": "Resources/Scripture/Acts/Letters/Romans",
+                  "extension": "",
+                  "isImageFolder": false,
+                  "items": [
+                    {
+                      "type": "file",
+                      "title": "grace",
+                      "name": "grace.txt",
+                      "path": "Resources/Scripture/Acts/Letters/Romans/grace.txt",
+                      "extension": ".txt",
+                      "isImageFolder": false,
+                      "items": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "title": "images",
+              "name": "images",
+              "path": "Resources/Scripture/Acts/images",
+              "extension": "",
+              "isImageFolder": true,
+              "items": [
+                {
+                  "type": "file",
+                  "title": "about",
+                  "name": "about.txt",
+                  "path": "Resources/Scripture/Acts/images/about.txt",
+                  "extension": ".txt",
+                  "isImageFolder": false,
+                  "items": []
+                },
+                {
+                  "type": "file",
+                  "title": "window",
+                  "name": "window.svg",
+                  "path": "Resources/Scripture/Acts/images/window.svg",
+                  "extension": ".svg",
+                  "isImageFolder": false,
+                  "items": []
+                },
+                {
+                  "type": "file",
+                  "title": "விளக்கு",
+                  "name": "விளக்கு.svg",
+                  "path": "Resources/Scripture/Acts/images/விளக்கு.svg",
+                  "extension": ".svg",
+                  "isImageFolder": false,
+                  "items": []
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "title": "Acts Overview",
+              "name": "Acts Overview.pdf",
+              "path": "Resources/Scripture/Acts/Acts Overview.pdf",
+              "extension": ".pdf",
+              "isImageFolder": false,
+              "items": []
+            },
+            {
+              "type": "file",
+              "title": "acts-opening",
+              "name": "acts-opening.json",
+              "path": "Resources/Scripture/Acts/acts-opening.json",
+              "extension": ".json",
+              "isImageFolder": false,
+              "items": []
+            },
+            {
+              "type": "file",
+              "title": "almost",
+              "name": "almost.json",
+              "path": "Resources/Scripture/Acts/almost.json",
+              "extension": ".json",
+              "isImageFolder": false,
+              "items": []
+            },
+            {
+              "type": "file",
+              "title": "broken",
+              "name": "broken.json",
+              "path": "Resources/Scripture/Acts/broken.json",
+              "extension": ".json",
+              "isImageFolder": false,
+              "items": []
+            },
+            {
+              "type": "file",
+              "title": "legacy-format",
+              "name": "legacy-format.json",
+              "path": "Resources/Scripture/Acts/legacy-format.json",
+              "extension": ".json",
+              "isImageFolder": false,
+              "items": []
+            },
+            {
+              "type": "file",
+              "title": "study-notes",
+              "name": "study-notes.json",
+              "path": "Resources/Scripture/Acts/study-notes.json",
+              "extension": ".json",
+              "isImageFolder": false,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "title": "வேத பாடங்கள்",
+      "name": "வேத பாடங்கள்",
+      "path": "Resources/வேத பாடங்கள்",
+      "extension": "",
+      "isImageFolder": false,
+      "items": [
+        {
+          "type": "folder",
+          "title": "குறிப்புகள்",
+          "name": "குறிப்புகள்",
+          "path": "Resources/வேத பாடங்கள்/குறிப்புகள்",
+          "extension": "",
+          "isImageFolder": false,
+          "items": [
+            {
+              "type": "file",
+              "title": "வாசிப்பு",
+              "name": "வாசிப்பு.txt",
+              "path": "Resources/வேத பாடங்கள்/குறிப்புகள்/வாசிப்பு.txt",
+              "extension": ".txt",
+              "isImageFolder": false,
+              "items": []
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "title": "யோவான் 3",
+          "name": "யோவான் 3.json",
+          "path": "Resources/வேத பாடங்கள்/யோவான் 3.json",
+          "extension": ".json",
+          "isImageFolder": false,
+          "items": []
+        }
+      ]
+    }
+  ]
+}

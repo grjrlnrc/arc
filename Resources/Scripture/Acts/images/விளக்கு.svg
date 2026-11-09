@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>Lamp</title>
+  <rect width="800" height="600" fill="#F8F6FF"/>
+  <circle cx="400" cy="250" r="150" fill="#CBD914" opacity="0.85"/>
+  <rect x="330" y="250" width="140" height="170" rx="70" fill="#FF7044"/>
+  <rect x="300" y="400" width="200" height="36" rx="18" fill="#2CA8E4"/>
+  <rect x="360" y="436" width="80" height="70" rx="16" fill="#2A1056"/>
+  <circle cx="400" cy="230" r="28" fill="#2A1056"/>
+</svg>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2A1056">
+  <meta name="description" content="ARC - Reformed Learners is a mobile-first browser for Bible quizzes, readings, and pictures.">
+  <title>ARC - Reformed Learners</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232A1056'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-size='11' font-family='Georgia' font-weight='700'%3EARC%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Noto+Sans+Tamil:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="hero">
+    <div class="hero-art" aria-hidden="true">
+      <span class="geo geo-coral"></span>
+      <span class="geo geo-lime"></span>
+      <span class="geo geo-blue"></span>
+    </div>
+    <div class="hero-inner">
+      <h1 class="lockup">
+        <span class="arc">ARC</span>
+        <span class="reformed">Reformed</span>
+        <span class="learners">Learners</span>
+      </h1>
+      <a class="cta" href="#categories">Explore quizzes</a>
+    </div>
+  </header>
+  <main id="main">
+    <noscript>
+      <p class="noscript">JavaScript is required to browse resources and take quizzes.</p>
+    </noscript>
+    <div id="page-alert" class="page-alert" role="alert"></div>
+    <section id="categories" aria-labelledby="categories-heading">
+      <div class="section-head">
+        <h2 id="categories-heading">Folders</h2>
+        <p>Open a folder for quizzes, readings, and pictures.</p>
+      </div>
+      <div id="catalog-status" class="status" role="status">Loading resources…</div>
+      <div id="category-grid" class="category-grid"></div>
+      <div id="root-files" class="resource-list"></div>
+    </section>
+    <section id="browser" hidden aria-labelledby="folder-title">
+      <div class="folder-panel">
+        <div class="folder-toolbar">
+          <button type="button" id="all-folders">All folders</button>
+          <nav id="breadcrumbs" aria-label="Breadcrumb"></nav>
+        </div>
+        <h2 id="folder-title" class="folder-title"></h2>
+        <p id="folder-summary" class="folder-summary"></p>
+      </div>
+      <div id="browser-status" class="status" role="status"></div>
+      <div id="browser-rows" class="resource-list"></div>
+      <div id="image-grid" class="image-grid" hidden></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>ARC - Reformed Learners</p>
+  </footer>
+  <dialog id="quiz-dialog" aria-labelledby="quiz-topic">
+    <div class="quiz-accent" aria-hidden="true"></div>
+    <div class="quiz-body">
+      <button type="button" id="quiz-close" class="quiz-close" aria-label="Close quiz">Close</button>
+      <div id="quiz-play">
+        <div class="quiz-scroll">
+          <div class="quiz-meta">
+            <p id="quiz-topic" class="quiz-topic"></p>
+            <p id="quiz-count" class="quiz-count"></p>
+          </div>
+          <div
+            id="quiz-progress"
+            class="progress"
+            role="progressbar"
+            aria-valuemin="1"
+            aria-valuemax="1"
+            aria-valuenow="1"
+            aria-label="Quiz progress"
+          >
+            <div id="quiz-progress-bar" class="progress-bar"></div>
+          </div>
+          <h2 id="quiz-question" class="quiz-question"></h2>
+          <p id="answer-label" class="answer-label">Choose one answer</p>
+          <div id="answers" class="answers" role="group" aria-labelledby="answer-label"></div>
+          <div id="quiz-feedback" class="feedback" aria-live="polite" aria-atomic="true" hidden></div>
+        </div>
+        <div class="quiz-nav">
+          <button type="button" id="quiz-prev" class="nav-btn secondary" hidden>Previous</button>
+          <button type="button" id="quiz-next" class="nav-btn primary" hidden>Next</button>
+        </div>
+      </div>
+      <div id="quiz-results" hidden>
+        <div class="quiz-scroll">
+          <h2 id="results-heading">Your score</h2>
+          <p id="score-percent" class="score-percent"></p>
+          <p id="score-count" class="score-count" aria-live="polite"></p>
+          <ol id="review-list" class="review-list"></ol>
+        </div>
+        <button type="button" id="try-again" class="try-again">Try again</button>
+      </div>
+    </div>
+  </dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

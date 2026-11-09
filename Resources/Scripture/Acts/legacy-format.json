@@ -1,0 +1,15 @@
+{
+  "title": "Legacy Acts quiz",
+  "topic": "Acts",
+  "translation": "WEB",
+  "questions": [
+    {
+      "question": "Who is traditionally the author of Acts?",
+      "answers": ["Paul", "Luke", "Peter", "James"],
+      "correctIndex": 1,
+      "verse": "Acts 1:1",
+      "verseText": "The first book I wrote, Theophilus, concerned all that Jesus began both to do and to teach,",
+      "explanation": "This file uses the retired index format and must open as a normal JSON resource."
+    }
+  ]
+}

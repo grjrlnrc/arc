@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>Stained-glass window</title>
+  <rect width="800" height="600" fill="#2A1056"/>
+  <rect x="70" y="48" width="660" height="504" rx="220" fill="#F8F6FF"/>
+  <rect x="110" y="150" width="580" height="360" fill="#F8F6FF"/>
+  <path d="M130 250h250v230H130z" fill="#C665DC"/>
+  <path d="M420 250h250v230H420z" fill="#2CA8E4"/>
+  <path d="M130 250c40-90 210-90 250 0" fill="#FF7044"/>
+  <path d="M420 250c40-90 210-90 250 0" fill="#CBD914"/>
+  <rect x="390" y="150" width="20" height="330" fill="#2A1056"/>
+  <rect x="130" y="360" width="540" height="18" fill="#2A1056"/>
+  <circle cx="400" cy="210" r="42" fill="#2A1056"/>
+</svg>
